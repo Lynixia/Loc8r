@@ -2,8 +2,8 @@ var request = require('request');
 var apiOptions = { //option determined by environment
   server : "http://localhost:3000"
 };
-if (process.env.NODE_ENV === 'production') {
-  apiOptions.server = "http://loc8r-1.azurewebsites.net/";
+if (process.env.NODE_ENV === 'work') {
+  apiOptions.server = "http://loc8r-1.azurewebsites.net";
 
 }
 
@@ -21,7 +21,7 @@ var _formatDistance = function (distance) {
   return numDistance + unit;
 } 
 
-//generic error response
+//generic error responses
 var _showError = function (req, res, status) {
   var title, content;
   if (status === 404) {
